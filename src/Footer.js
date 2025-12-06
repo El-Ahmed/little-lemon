@@ -2,7 +2,7 @@
 function Footer() {
     return (
         <footer>
-            <img src="Logo.svg" alt="Logo of little lemon restaurant" width="160" height="280" />
+            <img src="logo-green.png" alt="Logo of little lemon restaurant" width="190" height="258" />
             <div>
                 <nav>
                     <h3>Doormat Navigation</h3>
