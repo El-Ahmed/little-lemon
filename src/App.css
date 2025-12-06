@@ -163,7 +163,7 @@ img {
   justify-content: space-between;
 }
 
-article {
+.dish {
   width: 260px;
   background-color: #eee;
   border-top-left-radius: 16px;
@@ -216,4 +216,32 @@ article {
 p {
   font-size: 16px;
   font-weight: normal;
+}
+
+.rating {
+  color: #EE9972;
+  font-size: 24px;
+}
+
+.testimonials {
+  background-color: #495E57;
+  color: white;
+}
+
+.testimonials>div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+
+  article {
+    background-color: #eee;
+    color: black;
+    border-radius: 16px;
+    padding: 16px;
+  }
+
+  h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
 }
