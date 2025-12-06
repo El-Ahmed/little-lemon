@@ -1,36 +1,36 @@
+@media (width <=600px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+
+    ul {
+      flex-wrap: wrap;
+    }
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 20px;
+
+    div {
+      flex-direction: column;
+    }
+  }
+}
+
 header {
   display: flex;
   gap: 45px;
   align-items: center;
   justify-content: center;
   padding: 16px;
-}
 
-@media (width <=600px) {
-  header {
-    flex-direction: column;
-    gap: 20px;
+  ul {
+    display: flex;
+    gap: 28px;
+    padding: 0;
+    font-weight: bold;
   }
-
-  header ul {
-    flex-wrap: wrap;
-  }
-
-  footer {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  footer div {
-    flex-direction: column;
-  }
-}
-
-header ul {
-  display: flex;
-  gap: 28px;
-  padding: 0;
-  font-weight: bold;
 }
 
 nav ul {
@@ -52,21 +52,21 @@ footer {
   align-items: center;
   background-color: #495E57;
   color: white;
-}
 
-footer div {
-  display: flex;
-  gap: 40px;
-}
+  div {
+    display: flex;
+    gap: 40px;
+  }
 
-footer ul {
-  list-style-type: none;
-  padding: 0;
-}
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
 
-footer a {
-  text-decoration: none;
-  color: white;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 h3 {
@@ -74,4 +74,60 @@ h3 {
   font-size: 20px;
   font-weight: bolder;
   color: #F4CE14
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 600;
+  margin: 0;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 40px;
+  color: #F4CE14
+}
+
+.hero-section {
+  background-color: #495E57;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 160px;
+
+  .hero-content {
+    max-width: 900px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+  }
+
+  .hero-text {
+    max-width: 300px;
+  }
+
+  img {
+    border-radius: 16px;
+    position: absolute;
+    right: 0;
+  }
+}
+
+p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.button {
+  background-color: #F4CE14;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+  padding: 16px;
+  padding-inline: 24px;
+  display: inline-block;
 }
