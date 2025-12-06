@@ -67,6 +67,10 @@ footer {
     text-decoration: none;
     color: white;
   }
+
+  section {
+    display: block;
+  }
 }
 
 h3 {
@@ -85,7 +89,24 @@ h1 {
 h2 {
   margin-top: 0;
   font-size: 40px;
-  color: #F4CE14
+}
+
+section {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  >div {
+    max-width: 900px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+  }
+
 }
 
 .hero-section {
@@ -94,14 +115,10 @@ h2 {
   display: flex;
   justify-content: center;
   margin-bottom: 160px;
+  flex-direction: row;
 
-  .hero-content {
-    max-width: 900px;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    position: relative;
+  h2 {
+    color: #F4CE14
   }
 
   .hero-text {
@@ -113,12 +130,18 @@ h2 {
     position: absolute;
     right: 0;
   }
+
+  p {
+    font-size: 18px;
+    font-weight: 600;
+  }
 }
 
-p {
-  font-size: 18px;
-  font-weight: 600;
+img {
+  object-fit: cover;
 }
+
+
 
 .button {
   background-color: #F4CE14;
@@ -130,4 +153,64 @@ p {
   padding: 16px;
   padding-inline: 24px;
   display: inline-block;
+  height: fit-content;
+}
+
+
+.specials {
+  display: flex;
+  justify-content: space-between;
+}
+
+article {
+  width: 260px;
+  background-color: #eee;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  display: flex;
+  flex-direction: column;
+
+  figure {
+    padding: 0;
+    margin: 0;
+  }
+
+  img {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+
+  >div {
+    padding: 16px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    margin-top: auto;
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  color: #EE9972;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+}
+
+p {
+  font-size: 16px;
+  font-weight: normal;
 }
