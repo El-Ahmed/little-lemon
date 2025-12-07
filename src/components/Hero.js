@@ -1,7 +1,7 @@
 
 function Hero() {
     return (
-        <section className="hero-section" role="region" aria-label="Hero section">
+        <section className="hero-section" aria-label="Hero section">
             <div>
                 <div className="hero-text">
                     <h1>Little Lemon</h1>

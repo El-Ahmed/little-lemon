@@ -23,7 +23,7 @@ const testimonials = [
 function Testimonials() {
 
     return (
-        <section className="testimonials" role="region" aria-label="Customer testimonials">
+        <section className="testimonials" aria-label="Customer testimonials">
             <div>
                 <h2>Testimonials</h2>
                 {testimonials.map((t, index) => (

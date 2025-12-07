@@ -4,12 +4,12 @@ function ConfirmationPage() {
 
     return (
         <>
-            <section className="hero-section without-image" role="region" aria-label="Reservation page header">
+            <section className="hero-section without-image" aria-label="Reservation page header">
                 <div>
                     <h1>Reservation</h1>
                 </div>
             </section>
-            <section className="confirmation" role="region" aria-label="Reservation confirmation">
+            <section className="confirmation" aria-label="Reservation confirmation">
                 <div>
                     <ConfirmedBooking />
                 </div>

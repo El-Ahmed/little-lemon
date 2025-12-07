@@ -1,7 +1,7 @@
 
 function Chicago() {
     return (
-        <section className="hero-section chicago" role="region" aria-label="Restaurant introduction">
+        <section className="hero-section chicago" aria-label="Restaurant introduction">
             <div>
                 <div className="hero-text">
                     <h1>Little Lemon</h1>
