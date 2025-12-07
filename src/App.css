@@ -110,8 +110,9 @@ section {
     justify-content: space-between;
     width: 100%;
     position: relative;
+    margin-bottom: 24px;
+    box-sizing: border-box;
   }
-
 }
 
 .hero-section {
@@ -159,6 +160,8 @@ img {
   padding-inline: 24px;
   display: inline-block;
   height: fit-content;
+  border: none;
+  cursor: pointer;
 }
 
 
@@ -268,4 +271,34 @@ p {
     right: 170px;
     top: 100px;
   }
+}
+
+label {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+input,
+select {
+  border-radius: 16px;
+  color: #495E57;
+  padding: 20px;
+  border-color: rgba(51, 51, 51, 0.25);
+  background-color: white;
+}
+
+form {
+  width: 100%;
+  display: grid;
+  gap: 20px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: serif;
+}
+
+.without-image {
+  margin-bottom: 24px;
 }
