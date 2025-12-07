@@ -37,7 +37,7 @@ function Specials() {
                         <div>
                             <div className="card-header">
                                 <h3 className="card-title">{special.title}</h3>
-                                <span class="price">${special.price}</span>
+                                <span className="price">${special.price}</span>
                             </div>
                             <p>
                                 {special.description}
