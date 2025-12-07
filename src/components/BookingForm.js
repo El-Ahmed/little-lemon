@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function BookingForm({ availableTimes, dispatch }) {
-    const [date, setDate] = useState('')
+    const [date, setDate] = useState(new Date().toISOString().split('T')[0])
     const [time, setTime] = useState('')
     const [occasion, setOccasion] = useState('')
     const [guests, setGuests] = useState(1)
