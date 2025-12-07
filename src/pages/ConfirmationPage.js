@@ -1,0 +1,22 @@
+import ConfirmedBooking from "../components/ConfirmedBooking";
+
+function ConfirmationPage({ confirmedForm }) {
+
+    return (
+        <>
+            <section className="hero-section without-image">
+                <div>
+                    <h1>Reservation</h1>
+                </div>
+            </section>
+            <section className="confirmation">
+                <div>
+                    <ConfirmedBooking confirmedForm={confirmedForm} />
+                </div>
+            </section>
+        </>
+    );
+}
+
+export default ConfirmationPage;
+

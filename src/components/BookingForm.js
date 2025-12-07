@@ -1,17 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function BookingForm({ availableTimes, dispatch }) {
+function BookingForm({ availableTimes, dispatch, submitBooking }) {
     const [date, setDate] = useState(new Date().toISOString().split('T')[0])
     const [time, setTime] = useState('')
-    const [occasion, setOccasion] = useState('')
+    const [occasion, setOccasion] = useState('Birthday')
     const [guests, setGuests] = useState(1)
     const handleDateChange = (e) => {
         dispatch({ date: e.target.value });
         setDate(e.target.value);
     };
+    useEffect(() => {
+        setTime(availableTimes[0])
+    }, [availableTimes])
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log({
+            date: date,
+            time: time,
+            occasion: occasion,
+            guests: guests,
+        })
+        submitBooking({
+            date: date,
+            time: time,
+            occasion: occasion,
+            guests: guests,
+        })
+    }
 
     return (
-        <form >
+        <form onSubmit={handleSubmit} >
             <label htmlFor="res-date">Choose date</label>
             <input type="date" id="res-date" value={date} onChange={handleDateChange} />
             <label htmlFor="res-time" >Choose time</label>

@@ -1,6 +1,6 @@
 import BookingForm from "../components/BookingForm";
 
-function BookingPage({ availableTimes, dispatch }) {
+function BookingPage({ availableTimes, dispatch, submitBooking }) {
     return (
         <>
             <section className="hero-section without-image">
@@ -10,7 +10,7 @@ function BookingPage({ availableTimes, dispatch }) {
             </section>
             <section>
                 <div>
-                    <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
+                    <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitBooking={submitBooking} />
                 </div>
             </section>
         </>

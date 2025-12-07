@@ -294,11 +294,22 @@ form {
 }
 
 h1,
-h2,
-h3 {
+h2 {
   font-family: serif;
 }
 
 .without-image {
   margin-bottom: 24px;
+}
+
+.confirmation {
+  >div {
+    display: flex;
+    align-items: baseline;
+    gap: 16px
+  }
+
+  h3 {
+    color: black;
+  }
 }
