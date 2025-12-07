@@ -313,3 +313,11 @@ h2 {
     color: black;
   }
 }
+
+div.error {
+  color: red;
+}
+
+input.error {
+  border-color: red;
+}

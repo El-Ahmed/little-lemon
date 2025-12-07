@@ -1,45 +1,69 @@
-import { useEffect, useState } from "react";
+import { useFormik } from "formik";
+import { useEffect } from "react";
+
+const validate = values => {
+    const today = new Date()
+    today.setHours(0)
+    today.setMinutes(0)
+    today.setSeconds(0)
+    today.setMilliseconds(0)
+    const errors = {};
+    if (!values.date) {
+        errors.date = 'Required';
+    } else if (new Date(values.date) < today) {
+        errors.date = 'Must not be a date in the past';
+    }
+
+    if (values.guests > 10) {
+        errors.guests = 'Must be less than or equal to 10 guests';
+    }
+
+    return errors;
+
+};
 
 function BookingForm({ availableTimes, dispatch, submitBooking }) {
-    const [date, setDate] = useState(new Date().toISOString().split('T')[0])
-    const [time, setTime] = useState('')
-    const [occasion, setOccasion] = useState('Birthday')
-    const [guests, setGuests] = useState(1)
     const handleDateChange = (e) => {
         dispatch({ date: e.target.value });
-        setDate(e.target.value);
+        handleChange(e);
     };
-    useEffect(() => {
-        setTime(availableTimes[0])
-    }, [availableTimes])
+    const { values, errors, handleChange, handleSubmit, setFieldValue } = useFormik({
+        initialValues: {
+            date: new Date().toISOString().split('T')[0],
+            time: '',
+            occasion: 'Birthday',
+            guests: 1,
+        },
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        submitBooking({
-            date: date,
-            time: time,
-            occasion: occasion,
-            guests: guests,
-        })
-    }
+        onSubmit: values => {
+            submitBooking(values)
+        },
+        validate
+    });
+
+    useEffect(() => {
+        setFieldValue('time', availableTimes[0])
+    }, [availableTimes, setFieldValue])
 
     return (
         <form onSubmit={handleSubmit} >
             <label htmlFor="res-date">Choose date</label>
-            <input type="date" id="res-date" value={date} onChange={handleDateChange} />
+            <input className={errors.date ? 'error' : ''} type="date" id="res-date" name="date" value={values.date} onChange={handleDateChange} />
+            {errors.date ? <div className="error">{errors.date}</div> : null}
             <label htmlFor="res-time" >Choose time</label>
-            <select id="res-time" value={time} onChange={e => setTime(e.target.value)}>
+            <select id="res-time" name="time" value={values.time} onChange={handleChange}>
                 {availableTimes.map(availableTime => (
                     <option key={availableTime} value={availableTime}>{availableTime}</option>
                 ))}
             </select>
             <label htmlFor="occasion">Occasion</label>
-            <select id="occasion" value={occasion} onChange={e => setOccasion(e.target.value)}>
+            <select id="occasion" name="occasion" value={values.occasion} onChange={handleChange}>
                 <option value={'Birthday'}>Birthday</option>
                 <option value={'Anniversary'}>Anniversary</option>
             </select>
             <label htmlFor="guests">Number of guests</label>
-            <input type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={e => setGuests(e.target.value)} />
+            <input className={errors.guests ? 'error' : ''} name="guests" type="number" placeholder="1" min="1" max="10" id="guests" value={values.guests} onChange={handleChange} />
+            {errors.guests ? <div className="error">{errors.guests}</div> : null}
             <input type="submit" className="button" value="Make Your reservation" />
         </form>
     )
