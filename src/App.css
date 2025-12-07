@@ -303,14 +303,69 @@ input.error {
   border-color: red;
 }
 
+.menu-btn {
+  display: none;
+}
+
+.desktop-nav {
+  display: block;
+}
+
+nav {
+  flex-direction: row;
+  gap: 24px;
+}
+
+.menu-overlay {
+  display: none;
+}
+
 @media (max-width: 960px) {
   header {
-    flex-direction: column;
-    gap: 20px;
+    justify-content: space-between;
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .desktop-nav {
+      display: none;
+    }
+
+    .menu-btn {
+      display: block;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+
+  }
+
+  .menu-drawer {
+    background: white;
+    width: 75%;
+    max-width: 300px;
+    height: 100%;
+    padding: 24px;
+    animation: slideIn 0.3s ease-out;
 
     ul {
-      flex-wrap: wrap;
+      gap: 24px;
+      display: flex;
+      flex-direction: column;
     }
+  }
+
+  .menu-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
   }
 
   footer {
@@ -393,5 +448,15 @@ input.error {
       height: 125px;
       position: static;
     }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
   }
 }
