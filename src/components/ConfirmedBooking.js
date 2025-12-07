@@ -17,7 +17,7 @@ function ConfirmedBooking() {
                 <img src="/check.svg" alt="check icon" height={16} width={16} />
                 <h3>Your reservation has been confirmed</h3>
             </div>
-            <ul>
+            <ul aria-label="Reservation details">
                 <li>Date: {confirmedForm.date} </li>
                 <li>Time: {confirmedForm.time} </li>
                 <li>Occasion: {confirmedForm.occasion}</li>

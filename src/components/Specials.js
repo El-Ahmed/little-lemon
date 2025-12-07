@@ -23,7 +23,7 @@ const specials = [
 
 function Specials() {
     return (
-        <section>
+        <section role="region" aria-label="Weekly specials">
             <div>
                 <h2>This week's specials!</h2>
                 <a href="/online-menu" className="button">Online Menu</a>
@@ -42,7 +42,7 @@ function Specials() {
                             <p>
                                 {special.description}
                             </p>
-                            <Link to="/">Order a delivery</Link>
+                            <Link to="/" aria-label={`Order a delivery for ${special.title}`}>Order a delivery</Link>
                         </div>
                     </article>
                 ))}

@@ -3,12 +3,12 @@ import BookingForm from "../components/BookingForm";
 function BookingPage({ availableTimes, dispatch, submitBooking }) {
     return (
         <>
-            <section className="hero-section without-image">
+            <section className="hero-section without-image" role="region" aria-label="Reservation page header">
                 <div>
                     <h1>Reservation</h1>
                 </div>
             </section>
-            <section>
+            <section role="region" aria-label="Reservation form">
                 <div>
                     <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitBooking={submitBooking} />
                 </div>

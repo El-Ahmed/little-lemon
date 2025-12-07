@@ -5,13 +5,13 @@ function Footer() {
         <footer>
             <img src="logo-green.png" alt="Logo of little lemon restaurant" width="190" height="258" />
             <div>
-                <section>
+                <section aria-label="Doormat Navigation">
                     <h3>Doormat Navigation</h3>
 
                     <Nav />
                 </section>
 
-                <section>
+                <section aria-label="Contact Information">
                     <h3>Contact</h3>
                     <address>
                         <p>Little Lemon</p>
@@ -21,7 +21,7 @@ function Footer() {
                     </address>
                 </section>
 
-                <section>
+                <section aria-label="Social Media Links">
                     <h3>Social</h3>
                     <ul>
                         <li><a href="https://facebook.com/example" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">Facebook</a></li>
