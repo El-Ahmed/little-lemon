@@ -226,6 +226,7 @@ p {
 .testimonials {
   background-color: #495E57;
   color: white;
+  padding: 68px;
 }
 
 .testimonials>div {
@@ -243,5 +244,24 @@ p {
   h2 {
     grid-column: 1 / -1;
     text-align: center;
+  }
+}
+
+.chicago {
+  background-color: white;
+  color: black;
+
+  h2 {
+    color: black;
+  }
+
+  .restaurant-chef {
+    right: 0;
+    top: 0;
+  }
+
+  .restaurant {
+    right: 170px;
+    top: 100px;
   }
 }
