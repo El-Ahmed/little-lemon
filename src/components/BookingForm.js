@@ -15,12 +15,6 @@ function BookingForm({ availableTimes, dispatch, submitBooking }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log({
-            date: date,
-            time: time,
-            occasion: occasion,
-            guests: guests,
-        })
         submitBooking({
             date: date,
             time: time,

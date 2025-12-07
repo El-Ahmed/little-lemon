@@ -1,6 +1,6 @@
 import ConfirmedBooking from "../components/ConfirmedBooking";
 
-function ConfirmationPage({ confirmedForm }) {
+function ConfirmationPage() {
 
     return (
         <>
@@ -11,7 +11,7 @@ function ConfirmationPage({ confirmedForm }) {
             </section>
             <section className="confirmation">
                 <div>
-                    <ConfirmedBooking confirmedForm={confirmedForm} />
+                    <ConfirmedBooking />
                 </div>
             </section>
         </>

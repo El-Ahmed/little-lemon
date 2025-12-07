@@ -1,13 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-function ConfirmedBooking({ confirmedForm }) {
+function ConfirmedBooking() {
+    const [confirmedForm, setConfirmedForm] = useState({})
     const navigate = useNavigate()
     useEffect(() => {
-        if (!confirmedForm.date) {
+        const storedConfirmedForm = JSON.parse(localStorage.getItem('confirmedForm'))
+        if (!storedConfirmedForm?.date) {
             navigate("/booking");
         }
-    }, [confirmedForm, navigate]);
+        setConfirmedForm(storedConfirmedForm)
+    }, [navigate, setConfirmedForm]);
     return (
         <div className="confirmation">
             <div>
